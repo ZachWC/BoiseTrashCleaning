@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CleanSweep Pro - Professional Garbage Cleaning Services</title>
+    <title>Boise Garbage Cleaning - Professional Garbage Cleaning Services</title>
     <style>
         * {
             margin: 0;
@@ -201,6 +201,86 @@
             line-height: 1.6;
         }
 
+        /* Pricing Section */
+        .pricing {
+            padding: 4rem 0 2rem 0;
+            text-align: center;
+        }
+
+        .pricing h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            border-color: #4a90e2;
+        }
+
+        .price-highlight {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            margin-bottom: 2rem;
+            gap: 0.5rem;
+        }
+
+        .price {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #4a90e2;
+            text-shadow: 2px 2px 4px rgba(74, 144, 226, 0.2);
+        }
+
+        .per {
+            font-size: 1.3rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .pricing-features {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature {
+            padding: 0.8rem 0;
+            font-size: 1.1rem;
+            color: #333;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .feature:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-note {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            text-align: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e1e5e9;
+        }
+
         /* Contact Form */
         .contact-form {
             background: rgba(255, 255, 255, 0.95);
@@ -339,6 +419,19 @@
                 grid-template-columns: 1fr;
             }
 
+            .pricing-card {
+                margin: 1rem;
+                padding: 2rem 1rem;
+            }
+
+            .price {
+                font-size: 3rem;
+            }
+
+            .pricing-features {
+                text-align: center;
+            }
+
             .contact-form {
                 margin: 1rem;
                 padding: 2rem 1rem;
@@ -363,10 +456,11 @@
 <body>
     <nav>
         <div class="container">
-            <a href="#" class="logo">CleanSweep Pro</a>
+            <a href="#" class="logo">Boise Garbage Cleaning</a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#" onclick="showPage('home')">Home</a></li>
                 <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                <li><a href="#" onclick="showPage('home'); scrollToPricing()">Pricing</a></li>
             </ul>
             <div class="mobile-menu" onclick="toggleMobileMenu()">
                 <span></span>
@@ -385,6 +479,26 @@
                 <button class="cta-button" onclick="showPage('contact')">Get Free Quote</button>
             </section>
 
+            <!-- Pricing Section -->
+            <section class="pricing">
+                <h2>Simple, Affordable Pricing</h2>
+                <div class="pricing-card">
+                    <div class="price-highlight">
+                        <span class="price">$20</span>
+                        <span class="per">per bin</span>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature">✓ Deep cleaning & sanitization</div>
+                        <div class="feature">✓ Complete odor elimination</div>
+                        <div class="feature">✓ Professional service</div>
+                        <div class="feature">✓ Scheduled around your pickup day</div>
+                        <div class="feature">✓ Residential & commercial bins</div>
+                    </div>
+                    <p class="pricing-note">
+                    **Dumpster cleaning available - custom pricing based on size</p>
+                </div>
+            </section>
+
             <section class="services">
                 <h2>Our Services</h2>
                 <div class="services-grid">
@@ -395,13 +509,13 @@
                     </div>
                     <div class="service-card">
                         <div class="service-icon">🏢</div>
-                        <h3>Commercial Bin Services</h3>
-                        <p>Regular cleaning and sanitization of dumpsters and waste containers for businesses and commercial properties.</p>
+                        <h3>Commercial Bin & Dumpster Services</h3>
+                        <p>Regular cleaning and sanitization of dumpsters and waste containers for businesses and commercial properties. Custom pricing based on dumpster size and service frequency.</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">🦠</div>
                         <h3>Disinfection & Sanitization</h3>
-                        <p>Complete sanitization using eco-friendly disinfectants to eliminate bacteria, germs, and unpleasant odors.</p>
+                        <p>Complete sanitization using professional-grade disinfectants to eliminate bacteria, germs, and unpleasant odors from all types of waste containers.</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">💨</div>
@@ -440,20 +554,32 @@
                         <input type="tel" id="phone" name="phone">
                     </div>
                     <div class="form-group">
-                        <label for="trashCans">Number of Trash Cans</label>
-                        <select id="trashCans" name="trashCans">
-                            <option value="">Select number of cans</option>
-                            <option value="1">1 can</option>
-                            <option value="2">2 cans</option>
-                            <option value="3">3 cans</option>
-                            <option value="4">4 cans</option>
-                            <option value="5">5 cans</option>
-                            <option value="6">6 cans</option>
-                            <option value="7">7 cans</option>
-                            <option value="8">8 cans</option>
-                            <option value="9">9 cans</option>
-                            <option value="10">10 cans</option>
-                            <option value="more">More than 10 cans</option>
+                        <label for="serviceType">Type of Service Needed</label>
+                        <select id="serviceType" name="serviceType">
+                            <option value="">Select service type</option>
+                            <option value="residential-bins">Residential Garbage Bins</option>
+                            <option value="commercial-bins">Commercial Garbage Bins</option>
+                            <option value="dumpster-small">Small Dumpster (2-4 yard)</option>
+                            <option value="dumpster-medium">Medium Dumpster (6-8 yard)</option>
+                            <option value="dumpster-large">Large Dumpster (10+ yard)</option>
+                            <option value="mixed">Mixed Services</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Number of Bins/Containers</label>
+                        <select id="quantity" name="quantity">
+                            <option value="">Select quantity</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="more">More than 10</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -472,7 +598,7 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Please describe your garbage can cleaning needs, preferred service frequency, and any special requirements..."></textarea>
+                        <textarea id="message" name="message" placeholder="Please describe your cleaning needs, preferred service frequency, and any special requirements. For dumpsters, please include approximate size if known..."></textarea>
                     </div>
                     <button type="submit" class="cta-button" style="width: 100%; margin-top: 1rem;">Send Message</button>
                 </form>
@@ -489,10 +615,9 @@
                 </div>
                 <div class="contact-item">
                     <span>✉️</span>
-                    <a href="mailto:info@cleansweeppro.com">info@cleansweeppro.com</a>
+                    <a href="mailto:boisegarbagecleaning@gmail.com">boisegarbagecleaning@gmail.com</a>
                 </div>
             </div>
-            <p>&copy; 2025 CleanSweep Pro. All rights reserved.</p>
         </div>
     </footer>
 
@@ -510,6 +635,15 @@
             
             // Smooth scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToPricing() {
+            setTimeout(() => {
+                const pricingSection = document.querySelector('.pricing');
+                if (pricingSection) {
+                    pricingSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 100);
         }
 
         function toggleMobileMenu() {
@@ -531,19 +665,20 @@
             }
             
             // Option 1: mailto link (opens user's email client)
-            const subject = encodeURIComponent(`New Contact Form Submission - ${data.trashCans ? data.trashCans + ' trash cans' : 'General Inquiry'}`);
+            const subject = encodeURIComponent(`New Contact Form Submission - ${data.serviceType ? data.serviceType.replace('-', ' ') : 'General Inquiry'}`);
             const body = encodeURIComponent(`
 Name: ${data.name}
 Email: ${data.email}
 Phone: ${data.phone || 'Not provided'}
-Number of Trash Cans: ${data.trashCans || 'Not specified'}
+Service Type: ${data.serviceType || 'Not specified'}
+Quantity: ${data.quantity || 'Not specified'}
 Trash Pickup Day: ${data.trashDay || 'Not specified'}
 
 Message:
 ${data.message || 'No message provided'}
             `);
             
-            window.location.href = `mailto:info@cleansweeppro.com?subject=${subject}&body=${body}`;
+            window.location.href = `mailto:boisegarbagecleaning@gmail.com?subject=${subject}&body=${body}`;
             
             // Reset form after a brief delay
             setTimeout(() => {
